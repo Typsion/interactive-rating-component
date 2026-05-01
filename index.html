@@ -15,25 +15,26 @@
   <title>Frontend Mentor | Interactive rating component</title>
 </head>
 <body>
+  <main>
   <!-- Rating state start -->
-  <div class="card">
+  <div class="card" id="ratingCard">
     <div class="circle">
-      <img src="./images/icon-star.svg" alt="image star" class="img-star">
+      <img src="./images/icon-star.svg" alt="Star icon" class="img-star">
     </div>
     
     <h1>How did we do?</h1>
 
     <p class="description">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
 
-    <diV class="points">
-      <div class="point" onclick="clickedPoint(1, this)"><p>1</p></div>
-      <div class="point" onclick="clickedPoint(2, this)"><p>2</p></div>
-      <div class="point" onclick="clickedPoint(3, this)"><p>3</p></div>
-      <div class="point" onclick="clickedPoint(4, this)"><p>4</p></div>
-      <div class="point" onclick="clickedPoint(5, this)"><p>5</p></div>
+    <div class="points" role="radiogroup" aria-label="Rating from 1 to 5">
+      <button class="point" role="radio" aria-checked="false" aria-label="1" onclick="clickedPoint(1, this)">1</button>
+      <button class="point" role="radio" aria-checked="false" aria-label="2" onclick="clickedPoint(2, this)">2</button>
+      <button class="point" role="radio" aria-checked="false" aria-label="3" onclick="clickedPoint(3, this)">3</button>
+      <button class="point" role="radio" aria-checked="false" aria-label="4" onclick="clickedPoint(4, this)">4</button>
+      <button class="point" role="radio" aria-checked="false" aria-label="5" onclick="clickedPoint(5, this)">5</button>
     </diV>
 
-    <button id="btn" onclick="pokazKarte()" type="button">
+    <button id="btn" onclick="showCard()" type="button" aria-label="Submit rating">
       <span>S</span>
       <span>U</span>
       <span>B</span>
@@ -44,8 +45,8 @@
   </div>
 
   <!-- Thank you state start -->
-  <div class="card  card--new" id="nowaKarta" style="display: none;"> 
-    <img src="./images/illustration-thank-you.svg" alt="image thank you" class="img-illustration">
+  <div class="card  card--thank-you" id="thankyouCard" style="display: none;"> 
+    <img src="./images/illustration-thank-you.svg" alt="image with description thank you" class="img-illustration">
 
     <div class="rates">
       <p>You selected <span id="ratingValue"></span> out of 5</p>
@@ -56,7 +57,7 @@
     <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
   </div>
   
-
+  </main> 
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer" aria-label="Frontend Mentor, opens in a new tab">Frontend Mentor↗</a>. 
